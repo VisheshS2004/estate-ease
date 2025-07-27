@@ -64,10 +64,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ✅ Load .env from same folder as index.js
 dotenv.config({ path: path.join(__dirname, '.env') });
 
-console.log('Mongo URI:', process.env.MONGO); // should now print a valid URI
+//console.log('Mongo URI:', process.env.MONGO); // should now print a valid URI
 
 mongoose
   .connect(process.env.MONGO)
