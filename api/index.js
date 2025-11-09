@@ -62,11 +62,18 @@ import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import cors from 'cors';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.join(__dirname, '.env') });
+const corsOptions = {
+    origin:'*',
+    credentials:true
+}
+
+
 
 mongoose
   .connect(process.env.MONGO)
