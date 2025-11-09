@@ -5,7 +5,7 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
-import { configDotenv } from 'dotenv';
+// import { configDotenv } from 'dotenv';
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
-        const res = await fetch(`${process.env.host}/api/listing/get?offer=true&limit=4`);
+        const res = await fetch('https://estate-ease-vishesh-server.onrender.com/api/listing/get?offer=true&limit=4');
         const data = await res.json();
         setOfferListings(data);
         fetchRentListings();
@@ -26,7 +26,7 @@ export default function Home() {
     };
     const fetchRentListings = async () => {
       try {
-        const res = await fetch(`${process.env.host}/api/listing/get?type=rent&limit=4`);
+        const res = await fetch('https://estate-ease-vishesh-server.onrender.com/api/listing/get?type=rent&limit=4');
         const data = await res.json();
         setRentListings(data);
         fetchSaleListings();
@@ -37,7 +37,7 @@ export default function Home() {
 
     const fetchSaleListings = async () => {
       try {
-        const res = await fetch(`${process.env.host}/api/listing/get?type=sale&limit=4`);
+        const res = await fetch('https://estate-ease-vishesh-server.onrender.com/api/listing/get?type=sale&limit=4');
         const data = await res.json();
         setSaleListings(data);
       } catch (error) {
