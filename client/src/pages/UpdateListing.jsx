@@ -7,7 +7,7 @@ import {
 } from 'firebase/storage';
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
-import { configDotenv } from 'dotenv';
+// import { configDotenv } from 'dotenv';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function CreateListing() {
